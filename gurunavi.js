@@ -83,7 +83,7 @@ const gurunaviSearch = async (userId, latitude, longitude) => {
   const url = 'https://api.gnavi.co.jp/RestSearchAPI/v3/';
   const format = 'json';
   const range = 3;              // 緯度/経度からの検索範囲(半径)。3は、1000m
-  const hit_per_page = 20;       // 検索結果の最大取得件数
+  const hit_per_page = 5;       // 検索結果の最大取得件数
 
   let options;
   const nowHour = new Date().toFormat("HH24");
@@ -102,13 +102,13 @@ const gurunaviSearch = async (userId, latitude, longitude) => {
       }
     };
   } else {
-    const category = RSFST09000; 
+    // const category = RSFST09000; 
       options = {
       url: url,
       qs: {
         keyid: GURUNAVI_API_KEY,
         // format: format,
-        category_l: category,   // 大業態コード
+        // category_l.category_l_code: category,   // 大業態コード
         latitude: latitude,
         longitude: longitude,
         range: range,
