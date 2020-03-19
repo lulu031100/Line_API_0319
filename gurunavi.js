@@ -102,13 +102,13 @@ const gurunaviSearch = async (userId, latitude, longitude) => {
       }
     };
   } else {
-    let category;
+    const category = "RSFST09000";
       options = {
       url: url,
       qs: {
         keyid: GURUNAVI_API_KEY,
         // format: format,
-        // category_l: category,   // 大業態コード
+        category_l_code: category,   // 大業態コード
         latitude: latitude,
         longitude: longitude,
         range: range,
